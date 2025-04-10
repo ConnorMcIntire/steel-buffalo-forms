@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Steel Buffalo Cutsheet</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="styles.css" rel="stylesheet"> <!-- Link to the new external CSS file -->
+</head>
+<body class="bg-gray-200 min-h-screen p-6">
+  <div class="max-w-xl mx-auto text-center space-y-8">
+    <h1 class="text-4xl font-bold text-gray-800">Steel Buffalo</h1>
+    <h2 class="text-2xl text-gray-600">Select Animal Type</h2>
+
+    <!-- Livestock Section -->
+    <div class="bg-white p-6 rounded-2xl shadow space-y-4">
+      <h3 class="text-xl font-semibold text-gray-700">Livestock</h3>
+      <div class="grid grid-cols-1 gap-4">
+        <button onclick="goToForm('lamb-goat')" class="btn-hunter py-4 text-lg text-white rounded-xl shadow">Lamb / Goat</button>
+        <button onclick="goToForm('pig')" class="btn-hunter py-4 text-lg text-white rounded-xl shadow">Pig</button>
+        <button onclick="goToForm('beef')" class="btn-hunter py-4 text-lg text-white rounded-xl shadow">Beef</button>
+      </div>
+    </div>
+
+    <!-- Wild Game Section -->
+    <div class="bg-white p-6 rounded-2xl shadow space-y-4">
+      <h3 class="text-xl font-semibold text-gray-700">Wild Game</h3>
+      <div class="grid grid-cols-1 gap-4">
+        <button onclick="goToForm('deer')" class="btn-hunter py-4 text-lg text-white rounded-xl shadow">Deer</button>
+        <button onclick="goToForm('wildhog')" class="btn-hunter py-4 text-lg text-white rounded-xl shadow">Wild Hog</button>
+        <button onclick="goToForm('other')" class="btn-hunter py-4 text-lg text-white rounded-xl shadow">Other</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function goToForm(type) {
+      window.location.href = `${type}.html`;
+    }
+  </script>
+</body>
+</html>
