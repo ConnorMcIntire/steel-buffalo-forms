@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Steel Buffalo - Deer Cutsheet</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 min-h-screen p-6">
+  <div class="max-w-2xl mx-auto bg-white p-8 rounded-2xl shadow space-y-6">
+    <h1 class="text-3xl font-bold text-gray-800 text-center">Deer Cutsheet Form</h1>
+    <h2 class="text-xl font-semibold text-gray-700">Hunter Information</h2>
+
+    <form id="hunterInfoForm" class="space-y-4">
+      <div>
+        <label for="name" class="block font-medium text-gray-700">Name</label>
+        <input type="text" id="name" name="name" required class="w-full mt-1 p-2 border border-gray-300 rounded-xl">
+      </div>
+
+      <div>
+        <label for="dropOffDate" class="block font-medium text-gray-700">Drop Off Date</label>
+        <input type="date" id="dropOffDate" name="dropOffDate" required class="w-full mt-1 p-2 border border-gray-300 rounded-xl">
+      </div>
+
+      <div>
+        <label for="mobilePhone" class="block font-medium text-gray-700">Mobile Phone #</label>
+        <input type="tel" id="mobilePhone" name="mobilePhone" required class="w-full mt-1 p-2 border border-gray-300 rounded-xl">
+      </div>
+
+      <div>
+        <label for="killDate" class="block font-medium text-gray-700">Kill Date</label>
+        <input type="date" id="killDate" name="killDate" required class="w-full mt-1 p-2 border border-gray-300 rounded-xl">
+      </div>
+
+      <div>
+        <label for="county" class="block font-medium text-gray-700">County Harvested</label>
+        <input type="text" id="county" name="county" required class="w-full mt-1 p-2 border border-gray-300 rounded-xl">
+      </div>
+
+      <div>
+        <label for="state" class="block font-medium text-gray-700">State Harvested</label>
+        <input type="text" id="state" name="state" required class="w-full mt-1 p-2 border border-gray-300 rounded-xl">
+      </div>
+
+      <div>
+        <label for="confirmation" class="block font-medium text-gray-700">Confirmation #</label>
+        <input type="text" id="confirmation" name="confirmation" required class="w-full mt-1 p-2 border border-gray-300 rounded-xl">
+      </div>
+
+      <div class="pt-4">
+        <button type="submit" class="bg-green-700 text-white px-6 py-3 rounded-xl hover:bg-green-800 transition">Next</button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
