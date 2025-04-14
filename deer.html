@@ -9,48 +9,241 @@
 <body class="bg-gray-100 min-h-screen p-6">
   <div class="max-w-2xl mx-auto bg-white p-8 rounded-2xl shadow space-y-6">
     <h1 class="text-3xl font-bold text-gray-800 text-center">Deer Cutsheet Form</h1>
-    <h2 class="text-xl font-semibold text-gray-700">Hunter Information</h2>
 
-    <form id="hunterInfoForm" class="space-y-4">
-      <div>
-        <label for="name" class="block font-medium text-gray-700">Name</label>
-        <input type="text" id="name" name="name" required class="w-full mt-1 p-2 border border-gray-300 rounded-xl">
-      </div>
+    <!-- Hunter Information -->
+    <section>
+      <h2 class="text-xl font-semibold text-gray-700">Hunter Information</h2>
+      <form id="cutsheetForm" class="space-y-4">
+        <div>
+          <label for="name" class="block font-medium text-gray-700">Name</label>
+          <input type="text" id="name" name="name" required class="w-full mt-1 p-2 border border-gray-300 rounded-xl">
+        </div>
 
-      <div>
-        <label for="dropOffDate" class="block font-medium text-gray-700">Drop Off Date</label>
-        <input type="date" id="dropOffDate" name="dropOffDate" required class="w-full mt-1 p-2 border border-gray-300 rounded-xl">
-      </div>
+        <div>
+          <label for="dropOffDate" class="block font-medium text-gray-700">Drop Off Date</label>
+          <input type="date" id="dropOffDate" name="dropOffDate" required class="w-full mt-1 p-2 border border-gray-300 rounded-xl">
+        </div>
 
-      <div>
-        <label for="mobilePhone" class="block font-medium text-gray-700">Mobile Phone #</label>
-        <input type="tel" id="mobilePhone" name="mobilePhone" required class="w-full mt-1 p-2 border border-gray-300 rounded-xl">
-      </div>
+        <div>
+          <label for="mobilePhone" class="block font-medium text-gray-700">Mobile Phone #</label>
+          <input type="tel" id="mobilePhone" name="mobilePhone" required class="w-full mt-1 p-2 border border-gray-300 rounded-xl">
+        </div>
 
-      <div>
-        <label for="killDate" class="block font-medium text-gray-700">Kill Date</label>
-        <input type="date" id="killDate" name="killDate" required class="w-full mt-1 p-2 border border-gray-300 rounded-xl">
-      </div>
+        <div>
+          <label for="killDate" class="block font-medium text-gray-700">Kill Date</label>
+          <input type="date" id="killDate" name="killDate" required class="w-full mt-1 p-2 border border-gray-300 rounded-xl">
+        </div>
 
-      <div>
-        <label for="county" class="block font-medium text-gray-700">County Harvested</label>
-        <input type="text" id="county" name="county" required class="w-full mt-1 p-2 border border-gray-300 rounded-xl">
-      </div>
+        <div>
+          <label for="county" class="block font-medium text-gray-700">County Harvested</label>
+          <input type="text" id="county" name="county" required class="w-full mt-1 p-2 border border-gray-300 rounded-xl">
+        </div>
 
-      <div>
-        <label for="state" class="block font-medium text-gray-700">State Harvested</label>
-        <input type="text" id="state" name="state" required class="w-full mt-1 p-2 border border-gray-300 rounded-xl">
-      </div>
+        <div>
+          <label for="state" class="block font-medium text-gray-700">State Harvested</label>
+          <input type="text" id="state" name="state" required class="w-full mt-1 p-2 border border-gray-300 rounded-xl">
+        </div>
 
-      <div>
-        <label for="confirmation" class="block font-medium text-gray-700">Confirmation #</label>
-        <input type="text" id="confirmation" name="confirmation" required class="w-full mt-1 p-2 border border-gray-300 rounded-xl">
-      </div>
+        <div>
+          <label for="confirmation" class="block font-medium text-gray-700">Confirmation #</label>
+          <input type="text" id="confirmation" name="confirmation" required class="w-full mt-1 p-2 border border-gray-300 rounded-xl">
+        </div>
 
-      <div class="pt-4">
-        <button type="submit" class="bg-green-700 text-white px-6 py-3 rounded-xl hover:bg-green-800 transition">Next</button>
-      </div>
-    </form>
+        <!-- Animal Information -->
+        <h2 class="text-xl font-semibold text-gray-700 pt-6">Animal Information</h2>
+
+        <div>
+          <label class="block font-medium text-gray-700 mb-1">Doe or Buck</label>
+          <div class="flex gap-4">
+            <label class="flex items-center gap-2">
+              <input type="radio" name="animalType" value="Doe" class="form-radio text-green-600" required>
+              Doe
+            </label>
+            <label class="flex items-center gap-2">
+              <input type="radio" name="animalType" value="Buck" class="form-radio text-green-600">
+              Buck
+            </label>
+          </div>
+        </div>
+
+        <div id="buckPointsContainer" class="hidden">
+          <label for="buckPoints" class="block font-medium text-gray-700 mt-4">Buck Points</label>
+          <input type="number" id="buckPoints" name="buckPoints" min="1" class="w-full mt-1 p-2 border border-gray-300 rounded-xl">
+        </div>
+
+        <p class="text-sm font-medium text-red-600 mt-6">* Fees due at drop off *</p>
+
+        <div class="flex items-center gap-2 mt-2">
+          <input type="checkbox" id="gutFee" name="gutFee" value="40" class="form-checkbox text-green-600">
+          <label for="gutFee" class="text-gray-700 font-medium">Gut Fee ($40.00)</label>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <input type="checkbox" id="capeFee" name="capeFee" value="40" class="form-checkbox text-green-600">
+          <label for="capeFee" class="text-gray-700 font-medium">Cape Fee ($40.00)</label>
+        </div>
+        <!-- Taxidermy Information -->
+        <h2 class="text-xl font-semibold text-gray-700 pt-6">Taxidermy Information</h2>
+
+        <div class="space-y-2">
+        <label class="block font-medium text-gray-700">Select One</label>
+
+        <div class="flex items-center gap-2">
+            <input type="radio" id="euro" name="taxidermy" value="Euro" class="form-radio text-green-600" required>
+            <label for="euro" class="text-gray-700">Euro</label>
+        </div>
+
+        <div class="flex items-center gap-2">
+            <input type="radio" id="shoulder" name="taxidermy" value="Shoulder Mount" class="form-radio text-green-600">
+            <label for="shoulder" class="text-gray-700">Shoulder Mount</label>
+        </div>
+
+        <div class="flex items-center gap-2">
+            <input type="radio" id="southern" name="taxidermy" value="Southern Draw" class="form-radio text-green-600">
+            <label for="southern" class="text-gray-700">Southern Draw</label>
+        </div>
+
+        <div class="flex items-center gap-2">
+            <input type="radio" id="trophy" name="taxidermy" value="Trophy Taker" class="form-radio text-green-600">
+            <label for="trophy" class="text-gray-700">Trophy Taker</label>
+        </div>
+
+        <div class="flex items-center gap-2">
+            <input type="radio" id="takehome" name="taxidermy" value="Take Home" class="form-radio text-green-600">
+            <label for="takehome" class="text-gray-700">Take Home (Pickup Next Day)</label>
+        </div>
+        </div>
+        <!-- Basic Processing Prices -->
+        <h2 class="text-xl font-semibold text-gray-700 pt-6">Basic Processing Prices</h2>
+
+        <div class="space-y-2">
+        <div class="flex items-center gap-2">
+            <input type="checkbox" id="cooler" name="processingPrices" value="Cooler Quartered" class="form-checkbox text-green-600">
+            <label for="cooler" class="text-gray-700">Cooler Quartered <span class="text-sm text-black">($80.00)</span></label>
+        </div>
+
+        <div class="flex items-center gap-2">
+            <input type="checkbox" id="skin" name="processingPrices" value="Skin & Process" class="form-checkbox text-green-600">
+            <label for="skin" class="text-gray-700">Skin & Process <span class="text-sm text-black">($120.00)</span></label>
+        </div>
+
+        <div class="flex items-center gap-2">
+            <input type="checkbox" id="outOfState" name="processingPrices" value="Out of State" class="form-checkbox text-green-600">
+            <label for="outOfState" class="text-gray-700">Out of State <span class="text-sm text-black">($100.00)</span></label>
+        </div>
+        </div>
+        <!-- Basic Processing Options -->
+<h2 class="text-xl font-semibold text-gray-700 pt-6">Basic Processing Options</h2>
+
+<div class="space-y-4">
+
+  <!-- Inner Tenderloin -->
+  <div class="flex items-center gap-2">
+    <input type="checkbox" id="innerTenderloin" name="processingOptions" value="Inner Tenderloin" class="form-checkbox text-green-600">
+    <label for="innerTenderloin" class="text-gray-700">Inner Tenderloin <span class="text-sm text-gray-500">(Always Whole)</span></label>
   </div>
-</body>
+
+  <!-- Backstraps -->
+  <div>
+    <div class="flex items-center gap-2">
+      <input type="checkbox" id="backstraps" name="processingOptions" value="Backstraps" class="form-checkbox text-green-600">
+      <label for="backstraps" class="text-gray-700">Backstraps</label>
+    </div>
+    <div id="backstrapsOptions" class="mt-2 hidden">
+      <label for="backstrapStyle" class="block text-sm text-gray-600">Style:</label>
+      <select id="backstrapStyle" name="backstrapStyle" class="w-full mt-1 p-2 border rounded">
+        <option value="">Select</option>
+        <option value="Whole">Whole</option>
+        <option value="Halved">Halved</option>
+        <option value="Sliced">Sliced</option>
+        <option value="Butterflied">B,fly'd</option>
+        <option value="Cubed">Cubed</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Shoulder Roasts -->
+  <div>
+    <div class="flex items-center gap-2">
+      <input type="checkbox" id="shoulderRoast" name="processingOptions" value="Shoulder Roasts" class="form-checkbox text-green-600">
+      <label for="shoulderRoast" class="text-gray-700">Shoulder Roasts</label>
+    </div>
+    <div id="shoulderCount" class="mt-2 hidden">
+      <label for="shoulderChoice" class="block text-sm text-gray-600">How many?</label>
+      <select id="shoulderChoice" name="shoulderChoice" class="w-full mt-1 p-2 border rounded">
+        <option value="">Select</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Hinds Selection (Max total: 2) -->
+<div>
+    <label class="block font-semibold text-gray-700 mb-2">Hinds <span class="text-sm text-gray-500">(You may only select 2 in total. If red $5 per hind)</span></label>
+    <div class="space-y-3" id="hindsOptions">
+      <!-- Each hind type gets a dropdown -->
+      <div class="flex justify-between items-center">
+        <label for="hindRoasts" class="text-gray-700">Roasts</label>
+        <select id="hindRoasts" class="hind-select border p-1 rounded" name="hindRoasts">
+          <option value="0">0</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+        </select>
+      </div>
+  
+      <div class="flex justify-between items-center">
+        <label for="hindSteaks" class="text-gray-700">Steaks</label>
+        <select id="hindSteaks" class="hind-select border p-1 rounded" name="hindSteaks">
+          <option value="0">0</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+        </select>
+      </div>
+  
+      <div class="flex justify-between items-center">
+        <label for="hindCubeSteaks" class="text-red-600">Cube Steaks</label>
+        <select id="hindCubeSteaks" class="hind-select border p-1 rounded" name="hindCubeSteaks">
+          <option value="0">0</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+        </select>
+      </div>
+  
+      <div class="flex justify-between items-center">
+        <label for="hindStewMeat" class="text-red-600">Stew Meat (red)</label>
+        <select id="hindStewMeat" class="hind-select border p-1 rounded" name="hindStewMeat">
+          <option value="0">0</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+        </select>
+      </div>
+  
+      <div class="flex justify-between items-center">
+        <label for="hindJerky" class="text-red-600">Sliced Jerky (red)</label>
+        <select id="hindJerky" class="hind-select border p-1 rounded" name="hindJerky">
+          <option value="0">0</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+        </select>
+      </div>
+    </div>
+  
+    <p id="hindWarning" class="text-red-600 text-sm mt-2 hidden">You can only select a total of 2 hinds.</p>
+  </div>
+
+</div>
+
+        <div class="pt-6">
+          <button type="submit" class="bg-green-700 text-white px-6 py-3 rounded-xl hover:bg-green-800 transition">Next</button>
+        </div>
+        
+      </form>
+    </section>
+  </div>
+
+  
+
+     <script src="scripts/deer.js"></script>
+    </body>
 </html>
