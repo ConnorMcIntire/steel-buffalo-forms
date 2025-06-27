@@ -1,3 +1,4 @@
+console.log("deer.js loaded");
 document.querySelectorAll('input[name="animalType"]').forEach(radio => {
     radio.addEventListener('change', () => {
         const pointsSection = document.getElementById('buckPointsContainer');
