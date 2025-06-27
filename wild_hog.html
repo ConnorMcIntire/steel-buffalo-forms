@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wild Hog Cutsheet Form</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 min-h-screen p-6">
+    <div class="max-w-2xl mx-auto bg-white p-8 rounded-2xl shadow space-y-6">
+        <h1 class="text-3xl font-bold text-gray-800 text-center">Wild Hog Cutsheet Form</h1>
+
+        <!-- Hunter Information -->
+        <section>
+            <h2 class="text-xl font-semibold text-gray-700">Hunter Information</h2>
+            <form id="cutsheetForm" class="space-y-4">
+                <div>
+                    <label for="name" class="block font-medium text-gray-700">Name</label>
+                    <input type="text" id="name" name="name" required
+                        class="w-full mt-1 p-2 border border-gray-300 rounded-xl">
+                </div>
+
+                <div>
+                    <label for="dropOffDate" class="block font-medium text-gray-700">Drop Off Date</label>
+                    <input type="date" id="dropOffDate" name="dropOffDate" required
+                        class="w-full mt-1 p-2 border border-gray-300 rounded-xl">
+                </div>
+
+                <div>
+                    <label for="mobilePhone" class="block font-medium text-gray-700">Mobile Phone #</label>
+                    <input type="tel" id="mobilePhone" name="mobilePhone" required
+                        class="w-full mt-1 p-2 border border-gray-300 rounded-xl">
+                </div>
+
+                <div>
+                    <label for="killDate" class="block font-medium text-gray-700">Kill Date</label>
+                    <input type="date" id="killDate" name="killDate" required
+                        class="w-full mt-1 p-2 border border-gray-300 rounded-xl">
+                </div>
+
+                <div>
+                    <label for="county" class="block font-medium text-gray-700">County Harvested</label>
+                    <input type="text" id="county" name="county" required
+                        class="w-full mt-1 p-2 border border-gray-300 rounded-xl">
+                </div>
+
+                <div>
+                    <label for="state" class="block font-medium text-gray-700">State Harvested</label>
+                    <input type="text" id="state" name="state" required
+                        class="w-full mt-1 p-2 border border-gray-300 rounded-xl">
+                </div>
+
+                <div>
+                    <label for="confirmation" class="block font-medium text-gray-700">Confirmation #</label>
+                    <input type="text" id="confirmation" name="confirmation" required
+                        class="w-full mt-1 p-2 border border-gray-300 rounded-xl">
+                </div>
+
+                <!-- Animal Information -->
+                <section>
+                    <h2 class="text-xl font-semibold text-gray-700 mt-8">Animal Information</h2>
+
+                    <div class="space-y-4">
+                        <!-- Skin & Process -->
+                        <div>
+                            <label class="inline-flex items-center">
+                                <input type="checkbox" id="skinProcessCheckbox" class="mr-2">
+                                Skin & Process ($1.25/lb, Minimum $50)
+                            </label>
+                            <div id="skinProcessInput" class="mt-2 hidden">
+                                <label for="skinProcessWeight" class="block text-sm font-medium text-gray-600">Enter
+                                    Weight (lbs):</label>
+                                <input type="number" id="skinProcessWeight" min="0"
+                                    class="mt-1 p-2 border rounded-xl w-full" placeholder="e.g. 45">
+                                <p class="text-sm text-gray-700 mt-1">Total: <span id="skinProcessTotal">$0.00</span>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Gutting -->
+                        <div>
+                            <label class="inline-flex items-center">
+                                <input type="checkbox" id="guttingCheckbox" class="mr-2">
+                                Gutting ($40)
+                            </label>
+                        </div>
+
+                        <!-- Cooler (Quartered Up) -->
+                        <div>
+                            <label class="inline-flex items-center">
+                                <input type="checkbox" id="coolerCheckbox" class="mr-2">
+                                Cooler (Quartered Up) ($1.25/lb, Minimum $50)
+                            </label>
+                            <div id="coolerInput" class="mt-2 hidden">
+                                <label for="coolerWeight" class="block text-sm font-medium text-gray-600">Enter Weight
+                                    (lbs):</label>
+                                <input type="number" id="coolerWeight" min="0" class="mt-1 p-2 border rounded-xl w-full"
+                                    placeholder="e.g. 60">
+                                <p class="text-sm text-gray-700 mt-1">Total: <span id="coolerTotal">$0.00</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Taxidermy Section -->
+                <section>
+                    <h2 class="text-xl font-semibold text-gray-700">Taxidermy</h2>
+
+                    <div class="space-y-2">
+                        <div class="flex items-center space-x-2">
+                            <input type="radio" id="european" name="taxidermy" value="European"
+                                class="accent-green-600">
+                            <label for="european" class="text-gray-700">European</label>
+                        </div>
+
+                        <div class="flex items-center space-x-2">
+                            <input type="radio" id="caped" name="taxidermy" value="Caped" class="accent-green-600">
+                            <label for="caped" class="text-gray-700">Caped ($40.00)</label>
+                        </div>
+                    </div>
+                </section>
+                <!-- Basic Processing Options -->
+<!-- Loins (Boneless) -->
+<section>
+  <h2 class="text-xl font-semibold text-gray-700">Loins (Boneless)</h2>
+  <p class="text-sm text-gray-500 mb-2">There are a total of 2 loins.</p>
+
+  <!-- Loin Type -->
+  <div class="mb-4">
+    <label class="block font-medium text-gray-700">Select Type:</label>
+    <div class="mt-2 space-y-2">
+      <div class="flex items-center space-x-2">
+        <input type="radio" id="loinPork" name="loinType" value="Pork Loin" class="accent-green-600">
+        <label for="loinPork" class="text-gray-700">Pork Loin</label>
+      </div>
+      <div class="flex items-center space-x-2">
+        <input type="radio" id="loinTenderloin" name="loinType" value="Whole Inner Tenderloins" class="accent-green-600">
+        <label for="loinTenderloin" class="text-gray-700">Whole Inner Tenderloins</label>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pork Loin Cut Options -->
+  <div id="porkLoinCutOptions" class="mb-4 hidden">
+    <label class="block font-medium text-gray-700">Pork Loin Cut Style:</label>
+    <div class="mt-2 space-y-2">
+      <div class="flex items-center space-x-2">
+        <input type="radio" id="porkLoinWhole" name="porkCutStyle" value="Whole" class="accent-green-600">
+        <label for="porkLoinWhole" class="text-gray-700">Whole</label>
+      </div>
+      <div class="flex items-center space-x-2">
+        <input type="radio" id="porkLoinSliced" name="porkCutStyle" value="Sliced" class="accent-green-600">
+        <label for="porkLoinSliced" class="text-gray-700">Sliced</label>
+      </div>
+    </div>
+  </div>
+
+  <!-- Quantity of Loins -->
+  <div class="mb-4">
+    <label for="loinQuantity" class="block font-medium text-gray-700">How many loins? (Max 2)</label>
+    <input type="number" id="loinQuantity" name="loinQuantity" min="0" max="2"
+      class="w-full mt-1 p-2 border border-gray-300 rounded-xl">
+  </div>
+</section>
+            </form>
+        </section>
+    </div>
+    <script src="scripts/wild_hog.js"></script>
+</body>
+
+</html>
